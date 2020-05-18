@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Game.dir/main.cpp.o CMakeFiles/Game.dir/game/game.cpp.o CMakeFiles/Game.dir/strategies/computer_interface.cpp.o CMakeFiles/Game.dir/strategies/human.cpp.o  -o Game game/libgame.a 

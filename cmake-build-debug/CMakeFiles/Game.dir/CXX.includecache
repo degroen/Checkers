@@ -1,0 +1,44 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/degroen/Desktop/Game/game/cell.h
+
+/home/degroen/Desktop/Game/game/field.h
+iostream
+-
+cell.h
+/home/degroen/Desktop/Game/game/cell.h
+
+/home/degroen/Desktop/Game/game/game.cpp
+game.h
+/home/degroen/Desktop/Game/game/game.h
+
+/home/degroen/Desktop/Game/game/game.h
+memory
+-
+field.h
+/home/degroen/Desktop/Game/game/field.h
+step.h
+/home/degroen/Desktop/Game/game/step.h
+../strategies/interface.h
+/home/degroen/Desktop/Game/strategies/interface.h
+
+/home/degroen/Desktop/Game/game/step.h
+vector
+-
+string
+-
+cell.h
+/home/degroen/Desktop/Game/game/cell.h
+
+/home/degroen/Desktop/Game/strategies/interface.h
+../game/step.h
+/home/degroen/Desktop/Game/game/step.h
+../game/field.h
+/home/degroen/Desktop/Game/game/field.h
+
