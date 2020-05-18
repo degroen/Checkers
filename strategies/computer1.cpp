@@ -36,8 +36,11 @@ Step Computer1::makeStep(const Field &fld, size_t playerNum) {
         }
 
         if (HelpFunctions::isKing(fld.getCell(obj))){
-            for (auto dx:HelpFunctions::MOVE_X){
-                for(auto dy:HelpFunctions::MOVE_Y){
+            std::vector<int> moveX(HelpFunctions::MOVE_X), moveY(HelpFunctions::MOVE_Y);
+            std::random_shuffle(moveX.begin(), moveX.end());
+            std::random_shuffle(moveY.begin(), moveY.end());
+            for (auto dx:moveX){
+                for(auto dy:moveY){
                     if (mustEat){
                         Cell tmp(obj.x_+dx, obj.y_+dy);
                         while (tmp.isCorrect()){

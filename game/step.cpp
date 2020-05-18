@@ -33,6 +33,13 @@ const Cell& Step::operator[](size_t id) const{
     throw std::out_of_range("Out of range in steps");
 }
 
+Step operator+(const Step& A, const Step& B){
+    std::vector<Cell> ans(A.steps_.size()+B.steps_.size(), Cell(0, 0));
+    std::move(A.steps_.begin(), A.steps_.end(), ans.begin());
+    std::move(B.steps_.begin(), B.steps_.end(), ans.begin()+A.steps_.size());
+    return Step(ans);
+}
+
 size_t Step::size() const{
     return steps_.size();
 }

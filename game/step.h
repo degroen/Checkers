@@ -14,6 +14,8 @@ public:
 
     const Cell& operator[](size_t id) const;
 
+    friend Step operator+(const Step& A, const Step& B);
+
     size_t size() const;
 
 private:

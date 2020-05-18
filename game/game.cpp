@@ -69,7 +69,6 @@ void Game::play() {
             }
         }
     }
-
     for (size_t i = 0; i < players_.size(); ++i) {
         if (i == counter) {
             players_[i]->onWin();
