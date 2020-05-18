@@ -2,8 +2,10 @@
 #include "computer_interface.h"
 
 ComputerInterface::ComputerInterface() :
-        winCounter(0),
-        loseCounter(0) {}
+    winCounter(0),
+    loseCounter(0) {
+    giveUp_ = false;
+}
 
 void ComputerInterface::onWin() {
     ++winCounter;

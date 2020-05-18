@@ -3,7 +3,7 @@ project(Game)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(SOURCES main.cpp game/game.cpp game/game.h strategies/interface.h strategies/computer_interface.cpp strategies/computer_interface.h strategies/human.cpp strategies/human.h)
+set(SOURCES main.cpp game/game.cpp game/game.h strategies/interface.h strategies/computer_interface.cpp strategies/computer_interface.h strategies/human.cpp strategies/human.h strategies/computer1.cpp strategies/computer1.h)
 
 add_executable(Game ${SOURCES})
 

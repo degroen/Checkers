@@ -6,12 +6,16 @@
 
 class StrategyInterface {
 public:
-    virtual Step makeStep(const Field& field) = 0;
+    virtual Step makeStep(const Field& field, size_t playerNum) = 0;
     virtual void onIncorrectStep(const Step& step) const = 0;
 
     virtual void onLose() = 0;
     virtual void onWin() = 0;
     //virtual void on_tie() = 0;
+
+    virtual bool hasGiveUp() const{ return giveUp_; };
+
+    bool giveUp_;
 };
 
 

@@ -142,11 +142,11 @@ bool Field::canEat(size_t playerNum) const{
     for (const auto& cell:Men){
         for (auto dx:HelpFunctions::MOVE_X){
             int dy = HelpFunctions::MOVE_Y[playerNum];
-            Cell enemyCeil(cell.x_+dx, cell.y_+dy);
-            Cell emptyCeil(cell.x_+2*dx, cell.y_+2*dy);
-            if (emptyCeil.isCorrect() &&
-                HelpFunctions::isEnemy(getCell(enemyCeil), playerNum) &&
-                getCell(emptyCeil)=='_')
+            Cell enemyCell(cell.x_+dx, cell.y_+dy);
+            Cell emptyCell(cell.x_+2*dx, cell.y_+2*dy);
+            if (emptyCell.isCorrect() &&
+                HelpFunctions::isEnemy(getCell(enemyCell), playerNum) &&
+                getCell(emptyCell)=='_')
                 return true;
         }
     }

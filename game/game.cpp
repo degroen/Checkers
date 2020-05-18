@@ -38,7 +38,10 @@ Game::GameState Game::isWin() const {
             if (HelpFunctions::isWhite(c))
                 countWhite++;
         }
-    if (countBlack==0 || countWhite==0)
+    if (countBlack==0 ||
+        countWhite==0 ||
+        players_[0]->hasGiveUp() ||
+        players_[1]->hasGiveUp())
         return WIN;
     else
         return IN_PROGRESS;
@@ -50,7 +53,11 @@ void Game::play() {
         counter = (counter + 1) % 2;
         bool isCorrect = false;
         while (!isCorrect) {
-            Step step = players_[counter]->makeStep(field_);
+            Step step = players_[counter]->makeStep(field_, counter);
+            if (players_[counter]->hasGiveUp()){
+                counter = (counter+1)%2;
+                break;
+            }
             isCorrect = applyStep(step, counter);
             if (!isCorrect) {
                 players_[counter]->onIncorrectStep(step);

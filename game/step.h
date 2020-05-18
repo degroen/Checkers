@@ -9,7 +9,8 @@ class Step {
 public:
     Step(const Cell& firstPos, const Cell& secondPos);
     Step(const std::string& move);
-    //Step(std::vector<Cell> steps);
+    Step(const std::vector<Cell>& steps);
+    Step() = default;
 
     const Cell& operator[](size_t id) const;
 

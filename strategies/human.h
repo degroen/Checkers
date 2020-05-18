@@ -6,9 +6,9 @@
 
 class Human : public StrategyInterface{
 public:
-    Human(std::string name);
+    explicit Human(std::string name);
 
-    Step makeStep(const Field& field) override;
+    Step makeStep(const Field& field, size_t playerNum) override;
     void onIncorrectStep(const Step& step) const override;
 
     void onWin() override;
