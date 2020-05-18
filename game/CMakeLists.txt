@@ -1,9 +1,17 @@
 project(game)
 
 set(SOURCES
-        field.cpp)
+        cell.cpp
+        field.cpp
+        functions.cpp
+        game.cpp
+        step.cpp)
 set(HEADERS
-        field.h step.cpp step.h cell.cpp cell.h functions.h functions.cpp)
+        cell.h
+        field.h
+        functions.h
+        game.h
+        step.h)
 
 include_directories(../)
 
