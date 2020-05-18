@@ -1,4 +1,5 @@
 #include <algorithm>
+#include <ctime>
 #include "computer1.h"
 
 Computer1::Computer1(std::string name) :
@@ -13,7 +14,9 @@ Step Computer1::makeStep(const Field &fld, size_t playerNum) {
                 pieces.push_back(tmp);
         }
     }
+
     std::random_shuffle(pieces.begin(), pieces.end());
+
     bool mustEat = fld.canEat(playerNum);
     for (const auto& obj:pieces){
         if (HelpFunctions::isMan(fld.getCell(obj))){
@@ -44,6 +47,8 @@ Step Computer1::makeStep(const Field &fld, size_t playerNum) {
                                 tmp.x_+=dx; tmp.y_+=dy;
                                 if (tmp.isCorrect() && fld.getCell(tmp)=='_')
                                     return {obj, tmp};
+                                else
+                                    break;
                             }
                             tmp.x_+=dx; tmp.y_+=dy;
                         }

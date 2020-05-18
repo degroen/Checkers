@@ -7,6 +7,11 @@ Game::Game(const Player& player1, const Player& player2):
     players_.push_back(player2);
 }
 
+Game::~Game(){
+    for(auto& player:players_)
+        player->giveUp_ = false;
+}
+
 bool Game::applyStep(const Step& step, size_t playerNum) {
     if (step.size()<2)
         return false;
