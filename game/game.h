@@ -24,9 +24,6 @@ private:
 
     Field field_;
     std::vector<Player> players_;
-
-    const std::vector<char> MAN_PIECE_;
-    const std::vector<char> KING_PIECE_;
 };
 
 
